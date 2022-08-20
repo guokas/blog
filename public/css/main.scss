@@ -1,0 +1,123 @@
+---
+---
+
+@import 'config';
+
+@import 'bourbon/bourbon';
+
+@import 'base/poole';
+@import 'base/layout';
+@import 'base/global';
+@import 'base/syntax';
+
+@import 'component/sidebar';
+@import 'component/hero';
+@import 'component/post';
+@import 'component/page';
+@import 'component/tag';
+@import 'component/masthead';
+@import 'component/pagination';
+
+.toc-side{
+top: 7.0rem; 
+position: fixed;
+left:1rem;
+max-width:16rem;
+}
+.toc-side ul{
+    margin-bottom: 0px;;
+}
+.toc-topic{
+    font-weight: bold;
+    font-size: 18px;
+    color: #6a9fb5;
+}
+@media (max-width: 84em) {
+ .toc-side {
+  position:inherit;
+ }
+}
+.navi-link{
+    cursor: pointer;
+    text-decoration: none;
+}
+.navi-link::before{
+    content: "> ";
+}
+.navi-link-container{
+    font-size: 0.75em;
+    color: #6a9fb5;
+}
+.item-link{
+    cursor: pointer;
+    text-decoration: none;
+}
+//scroll to top
+.scolltopbutton{font-size: 28px;font-weight:bold;color:#ffffff;border:1px solid #444444; background-color:#444444;padding:10px 15px; border-radius:5px;}
+.scolltopbutton:hover{ background-color:#333333;color:#ffffff;border:1px solid #333333;}
+.closeopenbutton{
+    float: right;
+    cursor: pointer;
+}
+.closeopenbutton:hover{
+    color: green;
+}
+.closeopenbutton span
+{
+    padding: 10px;
+}
+.stripe
+{
+    padding: 5px 10px;
+    margin: 0px;
+}
+.darkstripe
+{
+    background-color: whitesmoke;
+}
+.imgcenter
+{
+    text-align: center;
+}
+.imgcenter img
+{
+    margin: 0 auto;
+}
+.quote
+{
+    color:green;
+    font-weight: bold;
+}
+pre{
+    white-space:pre-wrap;
+}
+red{
+    color:red;
+}
+red-bold{
+    color: red;
+    font-weight: bold;
+}
+bold{
+    font-weight: bold;
+}
+yellow{
+    color: yellow;
+}
+green{
+    color: green;
+}
+vb-commets{
+    display: inline;
+    color:green;
+    font-style: italic;
+}
+vb-keywords{
+    color:blue;
+    display: inline;
+}
+.post-category::before{
+    content: "\1F5BF";
+    font-family: $font-font-awesome;
+    padding-right: .5em;
+}

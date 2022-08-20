@@ -1,0 +1,41 @@
+<script type="text/javascript">
+    function addEvent( obj, type, fn ) {
+        if ( obj.attachEvent ) {
+            obj['e'+type+fn] = fn;
+            obj[type+fn] = function(){obj['e'+type+fn]( window.event );};
+            obj.attachEvent( 'on'+type, obj[type+fn] );
+        } else {
+            obj.addEventListener( type, fn, false );
+        }
+    }
+    function getScrollY() {
+        var  scrOfY = 0;
+        if( typeof( window.pageYOffset ) == 'number' ) {
+            //Netscape compliant
+            scrOfY = window.pageYOffset;
+
+        } else if( document.body && document.body.scrollTop )  {
+            //DOM compliant
+            scrOfY = document.body.scrollTop;
+        } 
+        return scrOfY;
+    }
+    addEvent(window, 'scroll', function(event) {
+        if(document.getElementById("topcontrol") == null)
+            return;
+        var y = getScrollY();
+        if(y>10){
+            document.getElementById("topcontrol").style.opacity=1;
+        }
+        if(y<=10){
+            document.getElementById("topcontrol").style.opacity=0;
+        }
+    });
+    function backtotop(){
+        //window.scrollTo(0,0);
+        document.body.scrollIntoView({behavior: 'smooth', block: 'start'});
+    }
+</script>
+<div id="topcontrol" style="position: fixed; bottom: 80px; right: 30px; opacity: 0; cursor: pointer;" title="Go To Up!">
+    <i class="fa fa-angle-double-up scolltopbutton" onclick="backtotop()"></i>
+</div>
