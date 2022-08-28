@@ -3,7 +3,7 @@ title: Guokas Blog
 tagline: 'An Enthusiastic Programmer'
 description: 'Guokas blog'
 baseurl: ""
-url: https://blog.guokas.top/
+url: https://blog.guokas.top
 logo: '/public/logo.png'
 timezone: Asia/Shanghai
 
