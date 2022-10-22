@@ -61,7 +61,7 @@ hero:
   caption: <a href="https://en.wikipedia.org/wiki/Li_Wenliang">李文亮 & 1986-2020 </a> 
 # Puglins
 # mathjax: true # whether support mathjax
-google_analytics_token: 'UA-238990731-1' # leave blank if you don't want google analytics
+google_analytics_token: 'G-5W7LB30JX5' # leave blank if you don't want google analytics(gtag.js)
 disqus_short_name: 'guokas' # leave blank if you don't want disqus
 
 category_links: 
