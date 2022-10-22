@@ -11,8 +11,8 @@ toc: false
 toc_label: "TABLE OF CONTENTS"
 toc_icon: "cog"
 comments: true
-description: 
-excerpt: 
+description: Deploying an HTTPS website requires you to have SSL certificates. The ramification of not being protected by SSL certificates is significant, and worldwide developers are using SSL certificates to encrypt the data transition of their websites. Reads official documents from scratch that can make people depressed. Today, I will illustrate a simple and effective way to create SSL certificates with acme.sh.
+excerpt: Deploying an HTTPS website requires you to have SSL certificates. The ramification of not being protected by SSL certificates is significant, and worldwide developers are using SSL certificates to encrypt the data transition of their websites. Reads official documents from scratch that can make people depressed. Today, I will illustrate a simple and effective way to create SSL certificates with acme.sh.
 ---
 <!--navigation bar-->
 <div class='navi-link-container'>
