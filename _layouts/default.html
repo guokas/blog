@@ -49,21 +49,6 @@
       })(document);
     </script>
 
-    {% if site.google_analytics_token %}
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics_token }}"></script>
-
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', '{{ site.google_analytics_token }}');//
-    </script>
-
-    {% endif %}
-
-
-
   </body>
 
   {% if site.disqus_short_name %}
