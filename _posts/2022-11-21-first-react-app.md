@@ -41,13 +41,24 @@ cd my-app
 npm start
 ```
 
+By default, `npx` are slow and will take some times. You are use `yarn` instead.
+```shell
+npm install --global yarn
+yarn --version
+
+yarn global add create-react-app
+create-react-app my-app
+```
+
 # Use Custom Registry
 If you got an error that indicates that this registry URL is inaccessible, then you need to switch to an accessible registry. If you live in China, you can use this registry.`registry=https://registry.npm.taobao.org/`.  Or you can change the command manually in your `.npmrc` file. I recommend to change variables to command:
 ```shell
 npm config set registry=https://registry.npm.taobao.org
 npm config list
 
-npx create-react-app my-app
+npm install -g create-react-app
+
+create-react-app my-app
 cd my-app
 npm start
 ```
@@ -88,3 +99,9 @@ The `.npmrc` file can exist in four different places.
 
 
 ` Per project NPM config` and `Per-user NPM config` are both frequently used config files. Publishable settings can be placed under `Per-Project`, sensitive information should be placed under `Per-user` folder.
+
+# Cache
+The npm cache file located at your `C:\Users\{User}\AppData\Local\npm-cache` and `C:\Users\{User}\AppData\Roaming\npm-cache` folders. You can clean your cache by deleted these two folders, or with command
+```shell
+npm cache clean --force 
+```
