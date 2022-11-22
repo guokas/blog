@@ -79,7 +79,7 @@ echo -n "<lowecase_email>:<password>" | openssl base64
 If you don't have OpenSSL installed on Windows, you can use the following snippet in windows Powershell.
 ```shell
 $MYTEXT = '<lowecase_email>:<password>'
-$ENCODED = [Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes($MYTEXT))
+$ENCODED = [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($MYTEXT))
 Write-Output $ENCODED
 ```
 <blockquote>
