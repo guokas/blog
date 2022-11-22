@@ -54,6 +54,8 @@ create-react-app my-app
 If you got an error that indicates that this registry URL is inaccessible, then you need to switch to an accessible registry. If you live in China, you can use this registry.`registry=https://registry.npm.taobao.org/`.  Or you can change the command manually in your `.npmrc` file. I recommend to change variables to command:
 ```shell
 npm config set registry=https://registry.npm.taobao.org
+npm config get registry
+
 npm config list
 
 npm install -g create-react-app
