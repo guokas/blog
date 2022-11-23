@@ -88,7 +88,7 @@ Write-Output $ENCODED
 <h2>Note:</h2>
 You can also google to encrypt online base64 credentials, You can also decrypt your credentials, sometimes, windows or Linux will append a newline character <code>\n</code> or <code>\r\n</code> at the end, make sure that doesn't include in your passport.
 <p/>
-  I stalled <strong>v8.19.3</strong> for npm(<code>npm --version</code>), And <strong>v16.17.0</strong> for my node(<code>node --version</code>) according my experience, but the latest node version could cause encryption fail(9.1.2).  Check <a src="https://www.npmjs.com/package/npm?activeTab=versions">npm history</a>. 
+  I stalled <strong>v8.19.3</strong> for npm(<code>npm --version</code>), And <strong>v16.17.0</strong> for my node(<code>node --version</code>) according my experience, but the latest node version could cause encryption fail(9.1.2).  Check <a href="https://www.npmjs.com/package/npm?activeTab=versions">npm history</a>. 
 </blockquote>
 
 # .npmrc config file
