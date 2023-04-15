@@ -25,5 +25,3 @@ after you clone it into your local. run:
 jekyll serve --watch
 ```
 open https:127.0.0.1:4000 in local browser.
-
-#test
