@@ -8,11 +8,10 @@ logo: '/public/logo.png'
 timezone: Asia/Shanghai
 
 # Site configurations
-remote_theme: pages-themes/time-machine@v0.2.0
 gems:
   - jekyll-paginate
-  - jekyll-sitemap  
-plugins: [jekyll-paginate,jekyll-sitemap,jekyll-remote-theme]
+  - jekyll-sitemap
+plugins: [jekyll-paginate,jekyll-sitemap]
 markdown: kramdown
 highlighter: rouge
 kramdown:
