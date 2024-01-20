@@ -12,8 +12,8 @@ toc: false
 toc_label: "TABLE OF CONTENTS"
 toc_icon: "cog"
 comments: true
-description: 
-excerpt: 
+description: In the Database, deadlock can be one of the most headache issues. As it presents maybe stochastic, usually accompanyed with high volumns or concurrencies on DML operations. You need to identify what locks granted caused deadlocks and how to mitigate them.Imaging in an application, which containes logics of dizziness bussiness. It’s impractical to tidy all the SQL operations to make competitive resources consecutive. You need to detect deadlocks in the SQL Server side.
+excerpt: In the Database, deadlock can be one of the most headache issues. As it presents maybe stochastic, usually accompanyed with high volumns or concurrencies on DML operations. You need to identify what locks granted caused deadlocks and how to mitigate them.Imaging in an application, which containes logics of dizziness bussiness. It’s impractical to tidy all the SQL operations to make competitive resources consecutive. You need to detect deadlocks in the SQL Server side.
 ---
 <!--navigation bar-->
 <div class='navi-link-container'>
