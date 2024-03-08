@@ -2,6 +2,18 @@
 <html lang="en-us">
 
   <head>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XL5GS8XF3K"></script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-XL5GS8XF3K');//
+  </script>
+  
+
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -11,7 +23,7 @@
 
   <title>
     
-      Guokas Blog &middot; An Enthusiastic Programmer
+      Blog &middot; Guokas Blog
     
   </title>
   
@@ -158,7 +170,7 @@
 
   <div class="sidebar-item">
     <p>
-    &copy; 2022 Guokas. This work is liscensed under <a href="http://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.
+    &copy; 2024 Guokas. This work is liscensed under <a href="http://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>.
     </p>
   </div>
 
@@ -185,11 +197,1272 @@
       </div>
 
       <div class="container content">
-        <div class="hero">
-  <img src="/public/img/liwenliang.jpg" />
-  <p><a href="https://en.wikipedia.org/wiki/Li_Wenliang">李文亮 & 1986-2020 </a></p>
+        <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/csharp-asp.net%20core/2020/05/06/project-structure/">
+        Project structure
+      </a>
+    </h1>
+
+    <span class="post-date">06 May 2020</span>
+     |
+    
+      <a href="/blog/categories/#csharp-asp-net-core" title="Category: CSharp-ASP.NET Core" class="post-tag post-category">CSharp-ASP.NET Core</a>
+    
+    
+    
+    
+    
+
+    <article>
+      <!--navigation bar-->
+<div class="navi-link-container">
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+        
+            <a href="/csharp-asp.net%20core/2020/04/27/asp-dot-net-core-tutorial/" class="navi-link">asp.net core tutorial</a>
+        
+    
+  
+    
+  
+    
+  
+    
+  
+    
+        
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+        
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+        
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+        
+    
+  
+    
+  
+    
+  
+    
+        
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+        
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+<a class="navi-link" href="">Project structure</a>
+</div>
+<!--navigation bar-->
+
+<p>In this episode, we are going to introduce the basic project structures. It’s essential to know the basic web project structure. To better illustrate the structure of the web project, I created an empty <strong>ASP.NET CORE</strong> project in visual studio 2019.</p>
+
+<p><img src="/public/img/2020-05-06-project-structure-a.png" alt="Alt" /></p>
+
+<h1 id="dependencies">Dependencies</h1>
+<p>You can add references or packages in here.</p>
+
+<h1 id="launchsettingsjson">launchSettings.json</h1>
+<p>In the properties menu, you will see a <em>launchSettings.json</em> file, which describes how to launch the project. It includes startup options, command, whether to open a browser, environment variables, etc..</p>
+
+<p><img src="/public/img/2020-05-06-project-structure-b.png" alt="Alt" /></p>
+
+<p>According to this project’s configuration, if you are using the IISExpress to launch this project, then two URLs will be matched, they are <a href="https://localhost:44326">https://localhost:44326</a> and <a href="http://localhost:63489">http://localhost:63489</a>. You can use either <a href="https://localhost:44326">https://localhost:44326</a> or <a href="http://localhost:63489">http://localhost:63489</a> to access your website. The difference is that one is <code class="language-plaintext highlighter-rouge">HTTPS</code> and the other one is <code class="language-plaintext highlighter-rouge">HTTP</code>. the <code class="language-plaintext highlighter-rouge">HTTP</code> address is specified explicitly in the <code class="language-plaintext highlighter-rouge">"applicationUrl": "http://localhost:63489"</code> field. <code class="language-plaintext highlighter-rouge">HTTPS</code> specified in this <code class="language-plaintext highlighter-rouge">"sslPort":44326</code> field. By default, Visual Studio launches the <code class="language-plaintext highlighter-rouge">HTTPS</code> one in the browser.</p>
+
+<p><img src="/public/img/2020-05-06-project-structure-c.png" alt="Alt" /></p>
+
+<p>Looking at your application icons in your desktop, you will find out that the IIS server launched.</p>
+
+<p><img src="/public/img/2020-05-06-project-structure-d.png" alt="Alt" /></p>
+
+<p>The IIS server is currently hosting your website.</p>
+
+<p>As we can see from the <em>launchSettings.json</em> file that has two profiles, we already introduced the IISExpress one. Another is the WebApplication1, which is similar to the IISExpress. WebApplication1 has two URLs that configured in one line <code class="language-plaintext highlighter-rouge">"applicationUrl": "https://localhost:5001;http://localhost:5000"</code>.</p>
+
+<p>Because WebApplication1 has nothing to do with the IIS, so WebApplication1 wouldn’t use the IIS as its server, an internal web server hosting instead.</p>
+
+<h1 id="programcs">Program.cs</h1>
+<p><em>Project.cs</em> is an entry point of the entire application. Essentially, <em>ASP.NET Core</em> is a console project, which executing from the <code class="language-plaintext highlighter-rouge">public static void Main(string[] args)</code>, where we can create a web host application.</p>
+
+<h2 id="set-host-in-aspnet-core-3x">Set Host in ASP.NET Core 3.x</h2>
+<p>the following is the <code class="language-plaintext highlighter-rouge">Program.cs</code> file</p>
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">public</span> <span class="k">class</span> <span class="nc">Program</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="k">static</span> <span class="k">void</span> <span class="nf">Main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="nf">CreateHostBuilder</span><span class="p">(</span><span class="n">args</span><span class="p">).</span><span class="nf">Build</span><span class="p">().</span><span class="nf">Run</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">public</span> <span class="k">static</span> <span class="n">IHostBuilder</span> <span class="nf">CreateHostBuilder</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">=&gt;</span>
+            <span class="n">Host</span><span class="p">.</span><span class="nf">CreateDefaultBuilder</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+                <span class="p">.</span><span class="nf">ConfigureWebHostDefaults</span><span class="p">(</span><span class="n">webBuilder</span> <span class="p">=&gt;</span>
+                <span class="p">{</span>
+                    <span class="n">webBuilder</span><span class="p">.</span><span class="n">UseStartup</span><span class="p">&lt;</span><span class="n">Startup</span><span class="p">&gt;();</span>
+                <span class="p">});</span>
+    <span class="p">}</span>
+</code></pre></div></div>
+<p>The <code class="language-plaintext highlighter-rouge">Main()</code> method calls the <code class="language-plaintext highlighter-rouge">CreateHostBuilder()</code> static methods with the pre-configured defaults. The <code class="language-plaintext highlighter-rouge">CreateHostBuilder()</code> returns an <code class="language-plaintext highlighter-rouge">IHostBuilder</code> instance, which can produce an <code class="language-plaintext highlighter-rouge">IHost</code> instance by calling the <code class="language-plaintext highlighter-rouge">Build()</code> method. When you get the <code class="language-plaintext highlighter-rouge">IHost</code> instance, start the web application through the <code class="language-plaintext highlighter-rouge">Run()</code> method.</p>
+
+<h2 id="createdefaultbuilder">CreateDefaultBuilder</h2>
+
+<p>the <code class="language-plaintext highlighter-rouge">CreateDefaultBuilder()</code> method in <code class="language-plaintext highlighter-rouge">Host.cs</code> returns an <code class="language-plaintext highlighter-rouge">IHostBuilder</code> instance, which initialized some default settings, for example, load the content root path, load environment variables, load settings file contents, configure ILoggerFactory, etc..</p>
+
+<p>The following is the source code from <a href="https://github.com/dotnet/runtime">dotnet/runtime github</a>:</p>
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">public</span> <span class="k">static</span> <span class="n">IHostBuilder</span> <span class="nf">CreateDefaultBuilder</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">var</span> <span class="n">builder</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">HostBuilder</span><span class="p">();</span>
+
+    <span class="n">builder</span><span class="p">.</span><span class="nf">UseContentRoot</span><span class="p">(</span><span class="n">Directory</span><span class="p">.</span><span class="nf">GetCurrentDirectory</span><span class="p">());</span>
+    <span class="n">builder</span><span class="p">.</span><span class="nf">ConfigureHostConfiguration</span><span class="p">(</span><span class="n">config</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="n">config</span><span class="p">.</span><span class="nf">AddEnvironmentVariables</span><span class="p">(</span><span class="n">prefix</span><span class="p">:</span> <span class="s">"DOTNET_"</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">args</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">config</span><span class="p">.</span><span class="nf">AddCommandLine</span><span class="p">(</span><span class="n">args</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+
+    <span class="n">builder</span><span class="p">.</span><span class="nf">ConfigureAppConfiguration</span><span class="p">((</span><span class="n">hostingContext</span><span class="p">,</span> <span class="n">config</span><span class="p">)</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">env</span> <span class="p">=</span> <span class="n">hostingContext</span><span class="p">.</span><span class="n">HostingEnvironment</span><span class="p">;</span>
+
+        <span class="n">config</span><span class="p">.</span><span class="nf">AddJsonFile</span><span class="p">(</span><span class="s">"appsettings.json"</span><span class="p">,</span> <span class="n">optional</span><span class="p">:</span> <span class="k">true</span><span class="p">,</span> <span class="n">reloadOnChange</span><span class="p">:</span> <span class="k">true</span><span class="p">)</span>
+              <span class="p">.</span><span class="nf">AddJsonFile</span><span class="p">(</span><span class="s">$"appsettings.</span><span class="p">{</span><span class="n">env</span><span class="p">.</span><span class="n">EnvironmentName</span><span class="p">}</span><span class="s">.json"</span><span class="p">,</span> <span class="n">optional</span><span class="p">:</span> <span class="k">true</span><span class="p">,</span> <span class="n">reloadOnChange</span><span class="p">:</span> <span class="k">true</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">env</span><span class="p">.</span><span class="nf">IsDevelopment</span><span class="p">()</span> <span class="p">&amp;&amp;</span> <span class="p">!</span><span class="kt">string</span><span class="p">.</span><span class="nf">IsNullOrEmpty</span><span class="p">(</span><span class="n">env</span><span class="p">.</span><span class="n">ApplicationName</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="kt">var</span> <span class="n">appAssembly</span> <span class="p">=</span> <span class="n">Assembly</span><span class="p">.</span><span class="nf">Load</span><span class="p">(</span><span class="k">new</span> <span class="nf">AssemblyName</span><span class="p">(</span><span class="n">env</span><span class="p">.</span><span class="n">ApplicationName</span><span class="p">));</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">appAssembly</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">config</span><span class="p">.</span><span class="nf">AddUserSecrets</span><span class="p">(</span><span class="n">appAssembly</span><span class="p">,</span> <span class="n">optional</span><span class="p">:</span> <span class="k">true</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="n">config</span><span class="p">.</span><span class="nf">AddEnvironmentVariables</span><span class="p">();</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">args</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">config</span><span class="p">.</span><span class="nf">AddCommandLine</span><span class="p">(</span><span class="n">args</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="nf">ConfigureLogging</span><span class="p">((</span><span class="n">hostingContext</span><span class="p">,</span> <span class="n">logging</span><span class="p">)</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">isWindows</span> <span class="p">=</span> <span class="n">RuntimeInformation</span><span class="p">.</span><span class="nf">IsOSPlatform</span><span class="p">(</span><span class="n">OSPlatform</span><span class="p">.</span><span class="n">Windows</span><span class="p">);</span>
+
+        <span class="c1">// IMPORTANT: This needs to be added *before* configuration is loaded, this lets</span>
+        <span class="c1">// the defaults be overridden by the configuration.</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">isWindows</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// Default the EventLogLoggerProvider to warning or above</span>
+            <span class="n">logging</span><span class="p">.</span><span class="n">AddFilter</span><span class="p">&lt;</span><span class="n">EventLogLoggerProvider</span><span class="p">&gt;(</span><span class="n">level</span> <span class="p">=&gt;</span> <span class="n">level</span> <span class="p">&gt;=</span> <span class="n">LogLevel</span><span class="p">.</span><span class="n">Warning</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="n">logging</span><span class="p">.</span><span class="nf">AddConfiguration</span><span class="p">(</span><span class="n">hostingContext</span><span class="p">.</span><span class="n">Configuration</span><span class="p">.</span><span class="nf">GetSection</span><span class="p">(</span><span class="s">"Logging"</span><span class="p">));</span>
+        <span class="n">logging</span><span class="p">.</span><span class="nf">AddConsole</span><span class="p">();</span>
+        <span class="n">logging</span><span class="p">.</span><span class="nf">AddDebug</span><span class="p">();</span>
+        <span class="n">logging</span><span class="p">.</span><span class="nf">AddEventSourceLogger</span><span class="p">();</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">isWindows</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="c1">// Add the EventLogLoggerProvider on windows machines</span>
+            <span class="n">logging</span><span class="p">.</span><span class="nf">AddEventLog</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="nf">UseDefaultServiceProvider</span><span class="p">((</span><span class="n">context</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span> <span class="p">=&gt;</span>
+    <span class="p">{</span>
+        <span class="kt">var</span> <span class="n">isDevelopment</span> <span class="p">=</span> <span class="n">context</span><span class="p">.</span><span class="n">HostingEnvironment</span><span class="p">.</span><span class="nf">IsDevelopment</span><span class="p">();</span>
+        <span class="n">options</span><span class="p">.</span><span class="n">ValidateScopes</span> <span class="p">=</span> <span class="n">isDevelopment</span><span class="p">;</span>
+        <span class="n">options</span><span class="p">.</span><span class="n">ValidateOnBuild</span> <span class="p">=</span> <span class="n">isDevelopment</span><span class="p">;</span>
+    <span class="p">});</span>
+
+    <span class="k">return</span> <span class="n">builder</span><span class="p">;</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<h1 id="startupcs">Startup.cs</h1>
+
+<p>An ASP.NET Core application must specify a Startup class, which needs to register in the <code class="language-plaintext highlighter-rouge">Program</code> class by using the generic <code class="language-plaintext highlighter-rouge">UseStartup&lt;T&gt;</code> method.</p>
+<div class="language-c# highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">webBuilder</span><span class="p">.</span><span class="n">UseStartup</span><span class="p">&lt;</span><span class="n">Startup</span><span class="p">&gt;();</span>
+</code></pre></div></div>
+
+<p>Open the <em>Startup.cs</em> file:</p>
+
+<p><img src="/public/img/2020-05-06-project-structure-e.png" alt="Alt" /></p>
+
+<h2 id="configureservices">ConfigureServices</h2>
+<p>The Configureservices method is a place where you can register your dependent classes with the built-in IoC container (<strong>ASP.NET Core refers dependent class as a Service</strong>).  After registering services, you can use it anywhere in the application. The IoC container will inject them automatically.</p>
+
+<h2 id="configure">Configure</h2>
+<p>The Configure method is a place where you can configure your pipeline by adding middlewares. The pipeline middlewares specify how the app responds to the HTTP request. The middlewares added to the <code class="language-plaintext highlighter-rouge">IApplicationBuilder</code>, but it’s not registered in the service container. Hosting creates an <code class="language-plaintext highlighter-rouge">IApplicationBuilder</code> and passes it directly to the Configure method.</p>
+
+<p>This is the end of the article. In this article, we have learned the basic web structure. In the next articles, I am going dig into it.</p>
+
+
+    <article>
+    <div class="post-more">
+      
+      <a href="/csharp-asp.net%20core/2020/05/06/project-structure/#disqus_thread"><i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      
+      <a href="/csharp-asp.net%20core/2020/05/06/project-structure/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+    </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/csharp-asp.net%20core/2020/05/03/asp-dot-net-core/">
+        ASP.NET Core
+      </a>
+    </h1>
+
+    <span class="post-date">03 May 2020</span>
+     |
+    
+      <a href="/blog/categories/#csharp-asp-net-core" title="Category: CSharp-ASP.NET Core" class="post-tag post-category">CSharp-ASP.NET Core</a>
+    
+    
+    
+    
+    
+
+    <article>
+      <!--navigation bar-->
+<div class="navi-link-container">
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+        
+            <a href="/csharp-asp.net%20core/2020/04/27/asp-dot-net-core-tutorial/" class="navi-link">asp.net core tutorial</a>
+        
+    
+  
+    
+  
+    
+  
+    
+  
+    
+        
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+        
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+        
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+        
+    
+  
+    
+  
+    
+  
+    
+        
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+        
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+<a class="navi-link" href="">asp.net core</a>
+</div>
+<!--navigation bar-->
+
+<p><strong>ASP.NET Core</strong> is an <strong><em>open-source</em></strong>(<a href="https://github.com/dotnet/aspnetcore">link</a>), <strong><em>cross-platform</em></strong>, and <strong><em>free</em></strong> platform, which mainly targets run on <strong>.NET Core</strong>.</p>
+
+<p><strong>ASP.NET Core 3.x</strong> only runs on the <strong>.NET Core 3.x</strong>, whereas <strong>ASP.NET Core 2.x</strong> runs on <strong>.NET Core 2.x</strong> as well as <strong>.NET Core Framework</strong>. more information looks <a href="https://docs.microsoft.com/en-us/dotnet/standard/net-standard">.NET standard</a>.</p>
+
+<h1 id="run-the-first-aspnet-core-3x-application">Run the first ASP.NET Core 3.x Application.</h1>
+<p>You can run an ASP.NET Core application on Visual Studio as well as on CLI.</p>
+
+<h2 id="on-visual-studio">On Visual Studio</h2>
+
+<p>Download the Visual Studio 2019 editor. If you want to build a different .Net core application, you need to choose a different version. Bellow is the minimum required version of Visual Studio based on the target visual studio version. <a href="https://docs.microsoft.com/en-us/dotnet/core/install/sdk?pivots=os-windows">more</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>.NET Core SDK version</th>
+      <th>Visual Studio version</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>3.1</td>
+      <td>Visual Studio 2019 version 16.4 or higher.</td>
+    </tr>
+    <tr>
+      <td>3.0</td>
+      <td>Visual Studio 2019 version 16.3 or higher.</td>
+    </tr>
+    <tr>
+      <td>2.2</td>
+      <td>Visual Studio 2017 version 15.9 or higher.</td>
+    </tr>
+    <tr>
+      <td>2.1</td>
+      <td>Visual Studio 2017 version 15.7 or higher.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Open Visual Studio 2019, choose create a new project</strong>
+<img src="/public/img/2020-05-03-asp-dot-net-core-a.png" alt="Alt" /></p>
+
+<p><strong>Choose ASP.NET Core Web Application</strong>
+<img src="/public/img/2020-05-03-asp-dot-net-core-b.png" alt="Alt" /></p>
+
+<p><strong>Enter your project name and choose the project location</strong>
+<img src="/public/img/2020-05-03-asp-dot-net-core-c.png" alt="Alt" /></p>
+
+<p><strong>Choose a version and a project template</strong>
+<img src="/public/img/2020-05-03-asp-dot-net-core-d.png" alt="Alt" /></p>
+
+<p>Here, we chose the ASP.NET Core MVC Views as our template.</p>
+
+<p>Press <code class="language-plaintext highlighter-rouge">F5</code>, Start debugging.
+<img src="/public/img/2020-05-03-asp-dot-net-core-e.png" alt="Alt" /></p>
+
+<h2 id="on-cli">On CLI</h2>
+
+<p>You can also run this project through CLI, open a command prompt and enter the following code.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dotnet new webapp -o aspnetcoreapp
+</code></pre></div></div>
+
+<p><strong>Trust the development certificate</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dotnet dev-certs https --trust
+</code></pre></div></div>
+
+<p><strong>Run the App</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd aspnetcoreapp
+dotnet watch run
+</code></pre></div></div>
+
+<p>Then, open <a href="https://localhost:5001/">https://localhost:5001/</a> in your browser.
+<img src="/public/img/2020-05-03-asp-dot-net-core-f.png" alt="Alt" /></p>
+
+<p>The above code creates a MVC Project, However, there are two project examples, one is MVC, another is Razor. Both are a complete ASP.NET Core project, they are good projects for a newbie. <a href="https://github.com/voltwu/C-Sharp-Web-Net-Core-MVC-BookListMVC">MVC booklist</a> project and <a href="https://github.com/voltwu/C-Sharp-Web-Net-Core-MVC-BookListMVC">Razor Booklist</a> project.</p>
+
+
+    <article>
+    <div class="post-more">
+      
+      <a href="/csharp-asp.net%20core/2020/05/03/asp-dot-net-core/#disqus_thread"><i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      
+      <a href="/csharp-asp.net%20core/2020/05/03/asp-dot-net-core/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+    </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/csharp-asp.net%20core/2020/04/28/dot-net-core/">
+        .NET Core
+      </a>
+    </h1>
+
+    <span class="post-date">28 Apr 2020</span>
+     |
+    
+      <a href="/blog/categories/#csharp-asp-net-core" title="Category: CSharp-ASP.NET Core" class="post-tag post-category">CSharp-ASP.NET Core</a>
+    
+    
+    
+    
+    
+
+    <article>
+      <!--navigation bar-->
+<div class="navi-link-container">
+  
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+        
+            <a href="/csharp-asp.net%20core/2020/04/27/asp-dot-net-core-tutorial/" class="navi-link">asp.net core tutorial</a>
+        
+    
+  
+    
+  
+    
+  
+    
+  
+    
+        
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+        
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+        
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+        
+    
+  
+    
+  
+    
+  
+    
+        
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+        
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+    
+        
+    
+  
+<a class="navi-link" href="">.net core</a>
+</div>
+<!--navigation bar-->
+
+<p><strong>.NET Core</strong> is an <strong><em>open-source</em></strong>, <strong><em>cross-platform</em></strong> framework. It’s a new version of the .NET Framework(pronounced as <em>dot net</em>).</p>
+
+<p><strong>.NET Framework</strong> was developing in the late 1990s by Microsoft. By late <strong>2000</strong>, Microsoft released the first beta version of <strong>.NET 1.0</strong>. The latest version is <strong>.NET 4.8</strong> that was released on <strong>18 April 2019</strong> today, and it is also the <strong>last version</strong> of the <strong>.NET branch</strong>. Microsoft announced that they are going to <strong>stop developing further .NET version</strong> in the future.</p>
+
+<p><img src="/public/img/2020-04-28-dot-net-core-a.png" alt="Alt" /></p>
+
+<p>Today, the concept of <code class="language-plaintext highlighter-rouge">Write once, run everywhere.</code> is very popular. However, the <strong>.NET Framework</strong> is just permitted to run on windows. So, the <strong>.NET Core</strong> was born. The <strong>.NET Core</strong> absorbed almost all advantages of the <strong>.NET Framework</strong>, and it also adds a lot of new features. The <strong>.Net Core 1.0</strong> was released in <strong>June 2016</strong> by Microsoft. In <strong>2017</strong>, the <strong>.NET Core 2.0</strong> was born. In <strong>2019</strong>, <strong>.NET Core 3.0</strong> was born. Microsoft is planning to release <strong>.NET 5</strong> in <strong>2020</strong>.</p>
+
+<p><img src="/public/img/2020-04-28-dot-net-core-b.webp" alt="Alt" /></p>
+
+<p>Below are some of the <strong>.NET Core</strong> advantages:</p>
+
+<h2 id="cross-platform">Cross-platform</h2>
+<p>You can run .NET Core project on Windows, Linux, and Mac, etc.</p>
+
+<h2 id="open-source">Open-source</h2>
+<p>.NET Core is Open-Source(<a href="https://source.dot.net/">link</a>).</p>
+
+<h2 id="supports-a-wide-range-of-application-types">Supports a wide range of application types</h2>
+<p>You can build multiple application types on .NET Core. such as Desktop, Web, Mobile.</p>
+
+<h2 id="cli">CLI</h2>
+<p>.NET Core includes CIL(common-line interface) for development,</p>
+
+<h2 id="compatibility">Compatibility</h2>
+<p>Compatibility with .NET Framework by using <a href="https://docs.microsoft.com/en-us/dotnet/standard/net-standard">.NET started</a>.</p>
+
+
+    <article>
+    <div class="post-more">
+      
+      <a href="/csharp-asp.net%20core/2020/04/28/dot-net-core/#disqus_thread"><i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      
+      <a href="/csharp-asp.net%20core/2020/04/28/dot-net-core/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+    </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/csharp-asp.net%20core/2020/04/27/asp-dot-net-core-tutorial/">
+        ASP.NET Core Tutorial
+      </a>
+    </h1>
+
+    <span class="post-date">27 Apr 2020</span>
+     |
+    
+      <a href="/blog/categories/#csharp-asp-net-core" title="Category: CSharp-ASP.NET Core" class="post-tag post-category">CSharp-ASP.NET Core</a>
+    
+    
+    
+    
+    
+
+    <article>
+      <p>ASP.NET Core is a new version of Microsoft, it’s a open-source web framework which can be run on Windows, Mac, Or Linux.</p>
+
+    <article>
+    <div class="post-more">
+      
+      <a href="/csharp-asp.net%20core/2020/04/27/asp-dot-net-core-tutorial/#disqus_thread"><i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      
+      <a href="/csharp-asp.net%20core/2020/04/27/asp-dot-net-core-tutorial/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+    </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/csharp-ef/2020/04/24/From-Existing-Database/">
+        From Existing Database
+      </a>
+    </h1>
+
+    <span class="post-date">24 Apr 2020</span>
+     |
+    
+      <a href="/blog/categories/#csharp-ef" title="Category: CSharp-EF" class="post-tag post-category">CSharp-EF</a>
+    
+    
+    
+    
+    
+
+    <article>
+      <p>How to generate context class and entity classes from existing database in Entity Framework Core</p>
+
+    <article>
+    <div class="post-more">
+      
+      <a href="/csharp-ef/2020/04/24/From-Existing-Database/#disqus_thread"><i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      
+      <a href="/csharp-ef/2020/04/24/From-Existing-Database/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+    </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/csharp-ef/2020/04/24/Raw-Sql-Operation/">
+        Execute Raw SQL
+      </a>
+    </h1>
+
+    <span class="post-date">24 Apr 2020</span>
+     |
+    
+      <a href="/blog/categories/#csharp-ef" title="Category: CSharp-EF" class="post-tag post-category">CSharp-EF</a>
+    
+    
+    
+    
+    
+
+    <article>
+      <p>entity framework core supports object-oriented operations, also supports raw sql operations, query, insert, delete, update etc…</p>
+
+    <article>
+    <div class="post-more">
+      
+      <a href="/csharp-ef/2020/04/24/Raw-Sql-Operation/#disqus_thread"><i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      
+      <a href="/csharp-ef/2020/04/24/Raw-Sql-Operation/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+    </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/csharp-ef/2020/04/15/Fluent-API/">
+        Fluent API
+      </a>
+    </h1>
+
+    <span class="post-date">15 Apr 2020</span>
+     |
+    
+      <a href="/blog/categories/#csharp-ef" title="Category: CSharp-EF" class="post-tag post-category">CSharp-EF</a>
+    
+    
+    
+    
+    
+
+    <article>
+      <p>the fluent api is another data annotation implemention which applied more functions.</p>
+
+    <article>
+    <div class="post-more">
+      
+      <a href="/csharp-ef/2020/04/15/Fluent-API/#disqus_thread"><i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      
+      <a href="/csharp-ef/2020/04/15/Fluent-API/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+    </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/csharp-ef/2020/04/14/Fluent-API-Introduction/">
+        Fluent API Tutorial
+      </a>
+    </h1>
+
+    <span class="post-date">14 Apr 2020</span>
+     |
+    
+      <a href="/blog/categories/#csharp-ef" title="Category: CSharp-EF" class="post-tag post-category">CSharp-EF</a>
+    
+    
+    
+    
+    
+
+    <article>
+      <p>Fluent API is another alternative way of data annotation.</p>
+
+    <article>
+    <div class="post-more">
+      
+      <a href="/csharp-ef/2020/04/14/Fluent-API-Introduction/#disqus_thread"><i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      
+      <a href="/csharp-ef/2020/04/14/Fluent-API-Introduction/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+    </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/csharp-ef/2020/04/10/Data-Annotation-Attribute-Concurrency/">
+        Data Annotation - ConcurrencyCheck Attribute
+      </a>
+    </h1>
+
+    <span class="post-date">10 Apr 2020</span>
+     |
+    
+      <a href="/blog/categories/#csharp-ef" title="Category: CSharp-EF" class="post-tag post-category">CSharp-EF</a>
+    
+    
+    
+    
+    
+
+    <article>
+      <p>the property that applied the ConcurrencyCheck will setup a optimistic concurrency control.</p>
+
+    <article>
+    <div class="post-more">
+      
+      <a href="/csharp-ef/2020/04/10/Data-Annotation-Attribute-Concurrency/#disqus_thread"><i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      
+      <a href="/csharp-ef/2020/04/10/Data-Annotation-Attribute-Concurrency/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+    </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/csharp-ef/2020/04/09/Data-Annotation-Attribute-DatabaseGenerated/">
+        Data Annotation - DatabaseGenerated Attribute
+      </a>
+    </h1>
+
+    <span class="post-date">09 Apr 2020</span>
+     |
+    
+      <a href="/blog/categories/#csharp-ef" title="Category: CSharp-EF" class="post-tag post-category">CSharp-EF</a>
+    
+    
+    
+    
+    
+
+    <article>
+      <p>DatabaseGeneratedAttribute specifies how the database generates values for a property, to override the default conventions.</p>
+
+    <article>
+    <div class="post-more">
+      
+      <a href="/csharp-ef/2020/04/09/Data-Annotation-Attribute-DatabaseGenerated/#disqus_thread"><i class="fa fa-comments" aria-hidden="true"></i>Comment</a>&nbsp;
+      
+      <a href="/csharp-ef/2020/04/09/Data-Annotation-Attribute-DatabaseGenerated/"><i class="fa fa-plus-circle" aria-hidden="true"></i>Read more</a>
+    </div>
+  </div>
+  
 </div>
 
+<div class="pagination">
+  
+    <a class="pagination-item older" href="/blog/page8">Older</a>
+  
+  
+    
+      <a class="pagination-item newer" href="/blog/page6">Newer</a>
+    
+  
+</div>
       </div>
     </div>
 
@@ -258,7 +1531,6 @@
       })(document);
     </script>
 
-    
   </body>
 
   
