@@ -38,11 +38,11 @@ This article leads you to achieve basic authentification most simply through htp
 # Prerequisites
 1. An open and SSL protected registry is running up. If you don't know how to set up, please review the previous two articles.
 
-# Let's start
+# Generate a htpasswd file
 It's easy to set up a user and password authentification through the htpasswd module, which is the Apache's constituent. 
 There are two steps for setting up authentification, first is to generate your password file, and then apply your password file to your registry container.
 
-1. Generate a password file
+Generate a password file(aka htpasswd file)
 ```
 $ mkdir auth
 $ docker run \
@@ -72,7 +72,10 @@ $ cat auth/htpasswd
 youruser:$2y$05$EmtDysYM8i42jUWp6qXg1.nSENd/b.A2ytile0TVETWzTfP4N/mp6
 ```
 
-2. Apply your password file to the registry container
+# Apply the htpasswd file
+
+Apply the htpasswd file when running up a Registry Container.
+
 You can use the following snippet to apply your password file on your `registry:2.7.0` container.
 ```
 $ docker run -d \
@@ -89,7 +92,13 @@ $ docker run -d \
   -p 5050:5000 \
   registry:2.7.0
 ```
+
+# Access your private registry with username and password
+
 Now, finally. A password secured registry is running up. 
+
+Here, my domain is `registry.vigourwu.xyz:5050`, you should use your own instead.
+
 ```
 $ docker login registry.vigourwu.xyz:5050
 $ docker tag ubuntu registry.vigourwu.xyz:5050/ubuntu
@@ -97,6 +106,11 @@ $ docker push registry.vigourwu.xyz:5050/ubuntu
 $ docker pull registry.vigourwu.xyz:5050/ubuntu
 $ docker logout registry.vigourwu.xyz:5050/ubuntu
 ```
+When you execute `doker login my_registry_domain`, it will prompt out to let you to input username and password. You can specifiy them in the command line as well with:
+```
+$ docker login --username my_name --password my_password my_registry_domain
+```
+
 
 # Conclusion
 At this point, you know how to set up a password secured registry.  I have mentioned all the details in the process. By the way, in the previous article [Set up a docker registry on debian 4.6][3], we built up a public registry without SSL and password, it should only be used in the testing environment. However, now our registry secured over SSL and password fits for the production environment.
