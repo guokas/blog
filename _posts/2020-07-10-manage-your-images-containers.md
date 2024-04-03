@@ -183,6 +183,7 @@ $ docker run -it --entrypoint /bin/bash <myimage>
 Error response from daemon: OCI runtime create failed: container_linux.go:349: starting container process caused "exec: \"/bin/bash\": stat /bin/bash: no such file or directory": unknown.
 ```
 You have these errors because your container/image doesn't have a `bash` command installed. However, there are still have other solutions for these problems, if your `bash` hasn't installed, you should use `/bin/sh` instead.
+
 ```
 $ # try to get inside on a container
 $ docker exec -it <mycontainer> /bin/sh
@@ -195,7 +196,21 @@ Or more visualization, you can view your containers filesystem without really ge
 $ docker exec -ti <mycontainer> ls /etc
 ```
 
+# Copy files out from image
+According to the previous phrase, you already know how to get inside the image. but Analyzing files inside images is not every convenient, so you need to copy them out. use the following snippet:
+```
+id=$(docker create image-name)
+docker cp $id:path - > local-tar-file
+docker rm -v $id
+```
+Change the `path` accordingly, this is done by `docker cp`. you can use other methods, check [Docker - how can I copy a file from an image to a host?][2] for more details.
+
+and the generated `local-tar-file` file is a tar zip file, you can unzip into the current folder with:
+```
+tar -xvf local-tar-file
+```
 
 
 
 [1]: /docker/2020/07/08/build-and-run-your-image
+[2]: https://stackoverflow.com/questions/25292198/docker-how-can-i-copy-a-file-from-an-image-to-a-host
